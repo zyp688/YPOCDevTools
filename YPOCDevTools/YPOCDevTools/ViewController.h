@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YPBaseVC.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : YPBaseVC
 
 
 @end
