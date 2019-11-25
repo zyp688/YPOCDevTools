@@ -143,9 +143,9 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define kYP_SAFE_RELEASE(_id_)      if(_id_) { [_id_ release], _id_ = nil; }
 
 /**  弱引用*/
-#define kYP_Weakify(_id_)        __weak typeof(_id_)  weak##_id_ = _id_;
-///**  强引用*/
-#define kYP_Strongify(_id_)      __strong typeof(_id_)  _id_ = weak##_id_;
+#define kYP_Weakify(type) __weak typeof(type) weak##type = type
+/**  强引用*/
+#define kYP_Strongify(type) __strong typeof(weak##type) strong##type = weak##type
 
 //----------------------内存⬆️----------------------------
 
