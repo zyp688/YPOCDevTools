@@ -118,10 +118,13 @@
 
 ///< 移除此view上的所有子视图
 - (void)removeAllSubviews {
-    for (UIView *view in self.subviews) {
-        [view removeFromSuperview];
+    for (id obj in self.subviews) {
+        if ([obj isKindOfClass:[UIView class]]) {
+            UIView *subV = (UIView *)obj;
+            [subV removeFromSuperview];
+            subV = nil;
+        }
     }
-    return;
 }
 
 @end
